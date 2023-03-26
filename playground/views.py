@@ -9,6 +9,9 @@ from django.contrib.auth import authenticate, login
 # from playground.forms import ContactForm
 from django.conf import settings
 from django.contrib.auth import get_user_model
+
+stateList={'AP': 'Andhra Pradesh', 'AR': 'Arunachal Pradesh', 'AS': 'Assam', 'BR': 'Bihar', 'CG': 'Chhattisgarh', 'GA': 'Goa', 'GJ': 'Gujarat', 'HR': 'Haryana', 'HP': 'Himachal Pradesh', 'JK': 'Jammu and Kashmir', 'JH': 'Jharkhand', 'KA': 'Karnataka', 'KL': 'Kerala', 'MP': 'Madhya Pradesh', 'MH': 'Maharashtra', 'MN': 'Manipur', 'ML': 'Meghalaya', 'MZ': 'Mizoram', 'NL': 'Nagaland', 'OD': 'Odisha', 'PB': 'Punjab', 'RJ': 'Rajasthan', 'SK': 'Sikkim', 'TN': 'Tamil Nadu', 'TS': 'Telangana', 'TR': 'Tripura', 'UK': 'Uttarakhand', 'UP': 'Uttar Pradesh', 'WB': 'West Bengal', 'DL': 'Delhi'}
+
 User = get_user_model()
 def login(request):
     if request.method == 'POST':
@@ -33,7 +36,7 @@ def event_page(request):
     event_name = e.name
     event_description = e.description
     event_time = e.startTime
-    event_state = e.state
+    event_state = stateList[e.state]
     event_venue = e.venue
     event_image = e.image
     

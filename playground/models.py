@@ -13,7 +13,7 @@ class Event(models.Model):
     venue = models.CharField(max_length=255)
     state = models.CharField(max_length=2, choices = stateList, default = 'DL')
     image = models.URLField(default=None)
-    slug = models.SlugField(max_length = 255, default=None)
+    slug = models.SlugField(max_length = 255, default=None, blank=True, null=True)
 
 
     
